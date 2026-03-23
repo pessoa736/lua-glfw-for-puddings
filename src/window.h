@@ -10,4 +10,10 @@
 
 int LCreateWindow(lua_State *L);
 
+int LMakeCurrentWindows(lua_State *L);
+
+int LCloseWindows(lua_State *L);
+
+int LShouldCloseWindows(lua_State *L);
+
 #endif

@@ -6,16 +6,23 @@
 --- lua glfw for puddings
 local lgfp = {}
 
----@return boolean isInitialized
-lgfp.IsInitialized = function () end
+
+
+---@class LuaWindows: userdata
+---@field ShouldClose fun(self: LuaWindows):boolean
+---@field MakeCurrentContext fun(self: LuaWindows)
+
+
+---@class lgfpWindowManagerLibDef: table, metatable
+lgfp.WindowManager = {}
 
 
 
 ---@param width integer
 ---@param height integer
 ---@param title string
----@return userdata
-lgfp.CreateWindows = function (width, height, title) end
+---@return LuaWindows
+lgfp.WindowManager.CreateWindows = function (width, height, title) end
 
 
 return lgfp
