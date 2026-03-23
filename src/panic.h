@@ -1,4 +1,7 @@
 #ifndef PANIC
+#include <stdio.h>
+#include <signal.h>
+#include <stdlib.h>
 
 #define PANIC(L, ERROR, FORMAT, ...)\
 { \
