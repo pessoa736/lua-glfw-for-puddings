@@ -1,0 +1,35 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json",
+  "diagnostics": {
+    "disable": [
+      "duplicate-doc-field",
+      "duplicate-doc-alias",
+      "missing-fields",
+      "redundant-return-value",
+      "lowercase-global"
+    ]
+  },
+  "runtime": {
+    "path": [
+      "?.lua",
+      "?/init.lua"
+    ],
+    "cpath": [
+      "?.so",
+      "?.dll",
+      "init/?.so",
+      "init/?.dll"
+    ]
+  },
+  "workspace": {
+    "library": [
+      "library",
+      "lua_modules"
+    ],
+    "ignoreDir": [
+      "rockspecs",
+      ".vscode",
+      "spec"
+    ]
+  }
+}
