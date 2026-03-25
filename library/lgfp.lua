@@ -6,11 +6,20 @@
 --- lua glfw for puddings
 local lgfp = {}
 
+---It starts GLFW and returns the initialization result.
+---@return boolean 
+lgfp.Init = function ()end
+
+---turn off ther GLFW
+lgfp.Terminate = function () end
 
 
 ---@class LuaWindows: userdata
 ---@field ShouldClose fun(self: LuaWindows):boolean
----@field MakeCurrentContext fun(self: LuaWindows)
+---@field MakeContextCurrent fun(self: LuaWindows)
+---@field GetWidth fun(self: LuaWindows):integer
+---@field GetHeight fun(self: LuaWindows):integer
+---@field GetTitle fun(self: LuaWindows):string 
 
 
 ---@class lgfpWindowManagerLibDef: table, metatable
