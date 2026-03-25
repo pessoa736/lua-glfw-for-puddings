@@ -64,7 +64,7 @@ int LCloseWindows(lua_State *L)
 
     if (ud)
     {
-        glfwDestroyWindow(ud->window);
+        LDestroyWindows(L);
         free(ud->title);
         ud->title = NULL;
     }
@@ -116,6 +116,28 @@ int LGetTitleWindows(lua_State *L){
 }
 
 
+
+int LDestroyWindows(lua_State *L){
+    LuaWindows *ud = (LuaWindows *)lua_newuserdata(L, sizeof(LuaWindows));
+    LuaPANIC(L, ud == NULL, "not get Window or no memory");
+
+    ud = luaL_checkudata(L, 1, "LGFP.WindowManager");
+    glfwDestroyWindow(ud->window);
+    return 0;
+}
+
+int LSwapBuffers(lua_State *L){
+    LuaWindows *ud = (LuaWindows *)lua_newuserdata(L, sizeof(LuaWindows));
+    LuaPANIC(L, ud == NULL, "not get Window or no memory");
+
+    ud = luaL_checkudata(L, 1, "LGFP.WindowManager");
+    glfwSwapBuffers(ud->window);
+    return 0;
+}
+
+
+
+
 int LCreateWindowsMetatable(lua_State *L)
 {
     luaL_newmetatable(L, "LGFP.WindowManager");
@@ -140,6 +162,13 @@ int LCreateWindowsMetatable(lua_State *L)
 
     lua_pushcfunction(L, LGetTitleWindows);
     lua_setfield(L, -2, "GetTitle");
+
+
+    lua_pushcfunction(L, LDestroyWindows);
+    lua_setfield(L, -2, "Destroy");
+    
+    lua_pushcfunction(L, LSwapBuffers);
+    lua_setfield(L, -2, "SwapBuffers");
 
     lua_pop(L, 1);
 }
