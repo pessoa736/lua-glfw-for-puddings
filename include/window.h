@@ -16,4 +16,6 @@ int LCloseWindows(lua_State *L);
 
 int LShouldCloseWindows(lua_State *L);
 
+int LCreateWindowsMetatable(lua_State *L);
+
 #endif
