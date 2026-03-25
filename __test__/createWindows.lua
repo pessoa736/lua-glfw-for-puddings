@@ -12,6 +12,10 @@ if (lgfp.Init()) then
     if not win then
         lgfp.Terminate()
         error("Creation Windows failed")
+
+        win:SwapBuffers()
+
+        lgfp.PollEvents()
     end
 
     win:MakeContextCurrent()
