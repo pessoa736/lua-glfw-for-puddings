@@ -13,6 +13,9 @@ lgfp.Init = function ()end
 ---turn off ther GLFW
 lgfp.Terminate = function () end
 
+---update Events
+lgfp.PollEvents = function () end
+
 
 ---@class LuaWindows: userdata
 ---@field ShouldClose fun(self: LuaWindows):boolean
@@ -20,6 +23,8 @@ lgfp.Terminate = function () end
 ---@field GetWidth fun(self: LuaWindows):integer
 ---@field GetHeight fun(self: LuaWindows):integer
 ---@field GetTitle fun(self: LuaWindows):string 
+---@field Destroy fun(self: LuaWindows)
+---@field SwapBuffers fun(self: LuaWindows)
 
 
 ---@class lgfpWindowManagerLibDef: table, metatable
