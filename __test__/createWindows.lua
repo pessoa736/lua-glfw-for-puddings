@@ -7,7 +7,7 @@ if (lgfp.Init()) then
 
     local winman = lgfp.WindowManager
 
-    local win = winman.CreateWindows(600, 400, "teste de criação de function")
+    local win = winman.CreateWindows(600, 400, "teste de criação de window")
     
     if not win then
         lgfp.Terminate()
